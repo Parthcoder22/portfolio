@@ -106,18 +106,18 @@ export default function About() {
             {milestones.map((milestone, idx) => (
               <div
                 key={idx}
-                className="swiss-card rounded-2xl p-6 hover:border-[#3458D4] transition-all duration-200"
+                className="swiss-card rounded-2xl p-5 sm:p-6 hover:border-[#3458D4] transition-all duration-200"
               >
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-col xs:flex-row items-start gap-4">
                   <div className="p-2.5 rounded-md bg-[#F7F6F2] border border-[#E6E4DE] shrink-0">
                     {milestone.icon}
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 w-full">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <h4 className="font-display font-bold text-base text-[#171717]">
                         {milestone.title}
                       </h4>
-                      <span className="text-xs font-mono text-[#777777] bg-[#F7F6F2] px-2 py-0.5 rounded border border-[#E6E4DE]">
+                      <span className="text-[11px] font-mono text-[#777777] bg-[#F7F6F2] px-2 py-0.5 rounded border border-[#E6E4DE]">
                         {milestone.period}
                       </span>
                     </div>

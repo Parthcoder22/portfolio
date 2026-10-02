@@ -85,11 +85,11 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6">
           {services.map((service) => (
             <div
               key={service.id}
-              className="swiss-card rounded-2xl p-7 flex flex-col justify-between hover:border-[#3458D4] transition-all duration-200 group"
+              className="swiss-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#3458D4] transition-all duration-200 group"
             >
               <div>
                 {/* Top Number & Icon */}

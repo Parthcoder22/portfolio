@@ -19,23 +19,23 @@ export default function ProjectModal({ project, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/60 backdrop-blur-xs animate-fade-in"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 md:p-10 bg-black/60 backdrop-blur-xs animate-fade-in"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
     >
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#FFFFFF] border border-[#E6E4DE] p-6 sm:p-8 md:p-10 text-left shadow-2xl"
+        className="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[90vh] overflow-y-auto rounded-xl sm:rounded-2xl bg-[#FFFFFF] border border-[#E6E4DE] p-4 sm:p-8 md:p-10 text-left shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top bar with close button */}
-        <div className="flex items-center justify-between pb-6 border-b border-[#E6E4DE]">
-          <div className="flex flex-wrap items-center gap-3">
+        <div className="flex items-center justify-between pb-4 sm:pb-6 border-b border-[#E6E4DE]">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <span className="swiss-tag">
               {project.category}
             </span>
             {project.badge && (
-              <span className="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded bg-[#3458D4]/10 text-[#3458D4] border border-[#3458D4]/20">
+              <span className="text-[10px] sm:text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded bg-[#3458D4]/10 text-[#3458D4] border border-[#3458D4]/20">
                 {project.badge}
               </span>
             )}
@@ -52,14 +52,14 @@ export default function ProjectModal({ project, onClose }) {
         </div>
 
         {/* Header Title & Subtitle */}
-        <div className="mt-6">
-          <h2 className="font-display font-bold text-2xl sm:text-4xl text-[#171717]">
+        <div className="mt-4 sm:mt-6">
+          <h2 className="font-display font-bold text-xl sm:text-3xl md:text-4xl text-[#171717] break-words">
             {project.title}
           </h2>
-          <p className="mt-1 text-base sm:text-lg text-[#3458D4] font-tech font-medium">
+          <p className="mt-1 text-sm sm:text-base md:text-lg text-[#3458D4] font-tech font-medium">
             {project.subtitle}
           </p>
-          <p className="mt-4 text-sm sm:text-base text-[#555555] leading-relaxed font-light">
+          <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-[#555555] leading-relaxed font-light">
             {project.summary}
           </p>
         </div>

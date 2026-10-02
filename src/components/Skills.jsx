@@ -69,12 +69,12 @@ export default function Skills() {
         </div>
 
         {/* Category Filter Pills */}
-        <div className="flex flex-wrap gap-2 mb-10">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-8 sm:mb-10">
           {skillCategories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-md text-xs font-mono transition-all cursor-pointer ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-md text-[11px] sm:text-xs font-mono transition-all cursor-pointer ${
                 activeCategory === cat.id
                   ? 'bg-[#171717] text-white font-semibold shadow-xs'
                   : 'bg-[#FFFFFF] text-[#666666] hover:text-[#171717] border border-[#E6E4DE] hover:border-[#D0CDC4]'

@@ -13,6 +13,23 @@ export default function Navbar({ activeSection }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Handle body scroll lock and escape key when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+      const handleKeyDown = (e) => {
+        if (e.key === 'Escape') setMobileMenuOpen(false)
+      }
+      window.addEventListener('keydown', handleKeyDown)
+      return () => {
+        document.body.style.overflow = 'unset'
+        window.removeEventListener('keydown', handleKeyDown)
+      }
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+  }, [mobileMenuOpen])
+
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
@@ -111,28 +128,29 @@ export default function Navbar({ activeSection }) {
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-xs md:hidden animate-fade-in"
+          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-xs md:hidden animate-fade-in flex flex-col justify-start pt-20 px-4 pb-6 overflow-y-auto"
           onClick={() => setMobileMenuOpen(false)}
         >
           <div
-            className="absolute top-16 left-4 right-4 bg-[#FFFFFF] border border-[#E6E4DE] rounded-xl p-6 shadow-xl"
+            className="w-full max-w-lg mx-auto bg-[#FFFFFF] border border-[#E6E4DE] rounded-2xl p-5 sm:p-6 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex flex-col space-y-3 font-mono text-sm">
+            <div className="flex flex-col space-y-1 font-mono text-sm">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-left py-2 px-3 rounded-md text-[#171717] hover:bg-[#F7F6F2] hover:text-[#3458D4] font-medium transition-colors"
+                  className="w-full text-left py-3 px-4 rounded-lg text-[#171717] hover:bg-[#F7F6F2] hover:text-[#3458D4] active:bg-[#EFECE6] font-medium transition-colors cursor-pointer flex items-center justify-between"
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  <span className="text-[#3458D4] text-xs">&rarr;</span>
                 </button>
               ))}
 
-              <div className="pt-3 border-t border-[#E6E4DE]">
+              <div className="pt-4 mt-2 border-t border-[#E6E4DE]">
                 <button
                   onClick={() => handleNavClick('#contact')}
-                  className="w-full py-2.5 rounded-md font-mono text-xs font-semibold text-white bg-[#3458D4] hover:bg-[#2648BD] transition-colors text-center inline-flex items-center justify-center gap-1.5"
+                  className="w-full py-3.5 rounded-lg font-mono text-xs font-semibold text-white bg-[#3458D4] hover:bg-[#2648BD] active:scale-[0.99] transition-all text-center inline-flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                 >
                   <span>Start a Project</span>
                   <ArrowUpRight className="w-4 h-4" />

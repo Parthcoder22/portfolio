@@ -27,9 +27,9 @@ export default function Footer() {
         </div>
 
         {/* Center: Location & Status */}
-        <div className="flex items-center gap-2.5 px-4 py-2 rounded-md bg-[#FFFFFF] border border-[#E6E4DE] text-[#555555] shadow-xs">
-          <span className="w-2 h-2 rounded-full bg-emerald-500" />
-          <span className="font-sans text-xs">Based in Gujarat, India &bull; Working Worldwide</span>
+        <div className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-md bg-[#FFFFFF] border border-[#E6E4DE] text-[#555555] shadow-xs text-center">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+          <span className="font-sans text-[11px] sm:text-xs">Based in Gujarat, India &bull; Working Worldwide</span>
         </div>
 
         {/* Right: Back to Top & Copyright */}

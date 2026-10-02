@@ -134,20 +134,20 @@ export default function Contact({ onShowToast }) {
             </p>
 
             {/* Direct Email Card */}
-            <div className="mt-10 p-6 rounded-2xl bg-[#FFFFFF] border border-[#E6E4DE] shadow-xs">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#777777] block mb-2 font-semibold">
+            <div className="mt-8 sm:mt-10 p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#E6E4DE] shadow-xs">
+              <span className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#777777] block mb-2 font-semibold">
                 Direct Email
               </span>
-              <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-3">
                 <a
                   href={`mailto:${emailAddress}`}
-                  className="font-mono text-sm sm:text-base text-[#171717] hover:text-[#3458D4] transition-colors font-medium"
+                  className="font-mono text-sm sm:text-base text-[#171717] hover:text-[#3458D4] transition-colors font-medium break-all xs:break-normal"
                 >
                   {emailAddress}
                 </a>
                 <button
                   onClick={handleCopyEmail}
-                  className="px-3 py-1.5 rounded-md bg-[#F7F6F2] hover:bg-[#EFECE6] text-xs font-mono text-[#555555] hover:text-[#171717] transition-colors cursor-pointer inline-flex items-center gap-1.5 border border-[#E6E4DE]"
+                  className="w-fit px-3 py-1.5 rounded-md bg-[#F7F6F2] hover:bg-[#EFECE6] text-xs font-mono text-[#555555] hover:text-[#171717] transition-colors cursor-pointer inline-flex items-center gap-1.5 border border-[#E6E4DE]"
                   aria-label="Copy email address"
                 >
                   {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
@@ -157,7 +157,7 @@ export default function Contact({ onShowToast }) {
             </div>
 
             {/* Professional Verified Social Profiles */}
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3">
               <a
                 href="https://www.linkedin.com/in/gohel-parth22"
                 target="_blank"
@@ -192,7 +192,7 @@ export default function Contact({ onShowToast }) {
             </div>
 
             {/* Availability Indicator */}
-            <div className="mt-8 flex items-center gap-2.5 text-xs font-mono text-[#777777]">
+            <div className="mt-6 sm:mt-8 flex items-center gap-2.5 text-xs font-mono text-[#777777]">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>Response time: Usually within 24 hours</span>
             </div>
@@ -200,7 +200,7 @@ export default function Contact({ onShowToast }) {
 
           {/* Right Column: Structured Project Intake Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl bg-[#FFFFFF] border border-[#E6E4DE] p-7 sm:p-9 shadow-xs">
+            <div className="rounded-2xl bg-[#FFFFFF] border border-[#E6E4DE] p-5 sm:p-8 lg:p-9 shadow-xs">
               <h3 className="font-display font-bold text-xl text-[#171717] mb-2">
                 Project Inquiry Form
               </h3>
@@ -208,8 +208,8 @@ export default function Contact({ onShowToast }) {
                 Tell me about your scope, requirements, or vision. I will get back to you with architectural considerations and availability.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" noValidate>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   {/* Name Input */}
                   <div>
                     <label htmlFor="contact-name" className="block text-xs font-mono uppercase tracking-wider text-[#555555] mb-1.5 font-medium">
@@ -226,7 +226,7 @@ export default function Contact({ onShowToast }) {
                       placeholder="e.g. Elena Rostova"
                       className={`w-full px-4 py-3 rounded-lg bg-[#F7F6F2] border ${
                         errors.name ? 'border-red-500' : 'border-[#E6E4DE] focus:border-[#3458D4]'
-                      } text-[#171717] placeholder-[#888888] text-sm focus:outline-none transition-colors`}
+                      } text-[#171717] placeholder-[#888888] text-base sm:text-sm focus:outline-none transition-colors`}
                     />
                     {errors.name && (
                       <span className="flex items-center gap-1 text-[11px] text-red-500 mt-1 font-mono">
@@ -252,7 +252,7 @@ export default function Contact({ onShowToast }) {
                       placeholder="name@company.com"
                       className={`w-full px-4 py-3 rounded-lg bg-[#F7F6F2] border ${
                         errors.email ? 'border-red-500' : 'border-[#E6E4DE] focus:border-[#3458D4]'
-                      } text-[#171717] placeholder-[#888888] text-sm focus:outline-none transition-colors`}
+                      } text-[#171717] placeholder-[#888888] text-base sm:text-sm focus:outline-none transition-colors`}
                     />
                     {errors.email && (
                       <span className="flex items-center gap-1 text-[11px] text-red-500 mt-1 font-mono">
@@ -273,7 +273,7 @@ export default function Contact({ onShowToast }) {
                       id="project-type-select"
                       value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-[#F7F6F2] border border-[#E6E4DE] focus:border-[#3458D4] text-[#171717] text-sm focus:outline-none transition-colors cursor-pointer"
+                      className="w-full px-4 py-3 rounded-lg bg-[#F7F6F2] border border-[#E6E4DE] focus:border-[#3458D4] text-[#171717] text-base sm:text-sm focus:outline-none transition-colors cursor-pointer"
                     >
                       <option value="Full-Stack Web Application">Full-Stack Web Application</option>
                       <option value="AI-Powered Solution">AI Integration / RAG Pipeline</option>
@@ -292,7 +292,7 @@ export default function Contact({ onShowToast }) {
                       id="budget-select"
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-[#F7F6F2] border border-[#E6E4DE] focus:border-[#3458D4] text-[#171717] text-sm focus:outline-none transition-colors cursor-pointer"
+                      className="w-full px-4 py-3 rounded-lg bg-[#F7F6F2] border border-[#E6E4DE] focus:border-[#3458D4] text-[#171717] text-base sm:text-sm focus:outline-none transition-colors cursor-pointer"
                     >
                       <option value="Open to discuss">Open to discuss</option>
                       <option value="<$1,000">&lt; $1,000</option>
@@ -319,7 +319,7 @@ export default function Contact({ onShowToast }) {
                     placeholder="Briefly describe what you want to build, existing infrastructure, and desired timeline..."
                     className={`w-full px-4 py-3 rounded-lg bg-[#F7F6F2] border ${
                       errors.message ? 'border-red-500' : 'border-[#E6E4DE] focus:border-[#3458D4]'
-                    } text-[#171717] placeholder-[#888888] text-sm focus:outline-none transition-colors resize-none`}
+                    } text-[#171717] placeholder-[#888888] text-base sm:text-sm focus:outline-none transition-colors resize-none`}
                   />
                   {errors.message && (
                     <span className="flex items-center gap-1 text-[11px] text-red-500 mt-1 font-mono">

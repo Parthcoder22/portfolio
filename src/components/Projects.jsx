@@ -261,18 +261,18 @@ export default function Projects({ onOpenModal }) {
             return (
               <div
                 key={project.id}
-                className="swiss-card rounded-2xl p-6 sm:p-8 lg:p-10 transition-all duration-200"
+                className="swiss-card rounded-2xl p-5 sm:p-8 lg:p-10 transition-all duration-200"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                   
                   {/* Column 1: Project Details */}
                   <div className={`lg:col-span-7 ${isReversed ? 'lg:order-2' : ''}`}>
-                    <div className="flex flex-wrap items-center gap-2.5 mb-3">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-3">
                       <span className="swiss-tag">
                         {project.category}
                       </span>
                       {project.badge && (
-                        <span className="text-[11px] font-mono px-2.5 py-0.5 rounded font-semibold bg-[#3458D4]/10 text-[#3458D4] border border-[#3458D4]/20">
+                        <span className="text-[10px] sm:text-[11px] font-mono px-2.5 py-0.5 rounded font-semibold bg-[#3458D4]/10 text-[#3458D4] border border-[#3458D4]/20">
                           {project.badge}
                         </span>
                       )}
@@ -281,10 +281,10 @@ export default function Projects({ onOpenModal }) {
                       </span>
                     </div>
 
-                    <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#171717]">
+                    <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#171717] break-words">
                       {project.title}
                     </h3>
-                    <p className="text-sm font-tech text-[#3458D4] mt-1 mb-4 font-medium">
+                    <p className="text-xs sm:text-sm font-tech text-[#3458D4] mt-1 mb-4 font-medium">
                       {project.subtitle}
                     </p>
 
@@ -309,7 +309,7 @@ export default function Projects({ onOpenModal }) {
                       {project.techStack.map((tech, i) => (
                         <span
                           key={i}
-                          className="px-2.5 py-1 rounded text-xs font-mono text-[#555555] bg-[#FFFFFF] border border-[#E6E4DE]"
+                          className="px-2.5 py-1 rounded text-[11px] sm:text-xs font-mono text-[#555555] bg-[#FFFFFF] border border-[#E6E4DE]"
                         >
                           {tech}
                         </span>
@@ -317,10 +317,10 @@ export default function Projects({ onOpenModal }) {
                     </div>
 
                     {/* Action Links */}
-                    <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
                       <button
                         onClick={() => onOpenModal(project)}
-                        className="px-5 py-2.5 rounded-md font-mono text-xs font-semibold text-white bg-[#3458D4] hover:bg-[#2648BD] transition-all duration-150 cursor-pointer shadow-xs inline-flex items-center gap-1.5"
+                        className="w-full sm:w-auto px-5 py-3 rounded-md font-mono text-xs font-semibold text-white bg-[#3458D4] hover:bg-[#2648BD] active:scale-[0.99] transition-all cursor-pointer shadow-xs inline-flex items-center justify-center gap-1.5"
                       >
                         <span>Explore Case Study</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
@@ -331,7 +331,7 @@ export default function Projects({ onOpenModal }) {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-4 py-2.5 rounded-md font-mono text-xs font-medium text-[#171717] bg-[#FFFFFF] hover:bg-[#EFECE6] border border-[#E6E4DE] transition-all duration-150 inline-flex items-center gap-2"
+                          className="w-full sm:w-auto px-4 py-3 rounded-md font-mono text-xs font-medium text-[#171717] bg-[#FFFFFF] hover:bg-[#EFECE6] border border-[#E6E4DE] transition-all inline-flex items-center justify-center gap-2 text-center"
                         >
                           <GithubIcon className="w-3.5 h-3.5 text-[#171717]" />
                           <span>Source Code</span>
@@ -341,7 +341,7 @@ export default function Projects({ onOpenModal }) {
                   </div>
 
                   {/* Column 2: Architectural Interactive Preview */}
-                  <div className={`lg:col-span-5 h-[340px] sm:h-[380px] ${isReversed ? 'lg:order-1' : ''}`}>
+                  <div className={`lg:col-span-5 w-full min-h-[320px] sm:min-h-[360px] h-full ${isReversed ? 'lg:order-1' : ''}`}>
                     {renderPreview(project.previewType)}
                   </div>
 

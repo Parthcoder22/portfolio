@@ -34,11 +34,18 @@
   body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-height: 100%;
     overflow-x: hidden;
     background-color: #F7F6F2;
     color: #171717;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  img, svg, video, canvas, iframe {
+    max-width: 100%;
+    height: auto;
   }
 
   /* Refined, quiet Swiss scrollbar */

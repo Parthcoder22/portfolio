@@ -7,8 +7,8 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    // Only show on desktop pointers
-    const isTouch = window.matchMedia('(pointer: coarse)').matches
+    // Only show on desktop pointers and large screens
+    const isTouch = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 1024
     if (isTouch) return
 
     const handleMouseMove = (e) => {

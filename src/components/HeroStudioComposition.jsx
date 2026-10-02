@@ -171,24 +171,24 @@ export default function HeroStudioComposition() {
   }, [hasWebGL])
 
   return (
-    <div className="w-full max-w-[460px] rounded-2xl bg-[#FFFFFF] border border-[#E6E4DE] shadow-xs overflow-hidden flex flex-col justify-between">
+    <div className="w-full max-w-[460px] mx-auto rounded-2xl bg-[#FFFFFF] border border-[#E6E4DE] shadow-xs overflow-hidden flex flex-col justify-between">
       {/* Top Coordinate Header */}
-      <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-[#E6E4DE] text-xs font-mono">
+      <div className="flex flex-wrap items-center justify-between gap-2 px-4 sm:px-6 pt-4 sm:pt-5 pb-3 border-b border-[#E6E4DE] text-[11px] sm:text-xs font-mono">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[#3458D4]" />
           <span className="font-semibold text-[#171717] tracking-wider">
             FIG. 01 — ARCHITECTURAL CORE
           </span>
         </div>
-        <span className="text-[#777777] text-[11px] uppercase tracking-wider">
+        <span className="text-[#777777] text-[10px] sm:text-[11px] uppercase tracking-wider">
           MSU Baroda CSE &bull; 2026
         </span>
       </div>
 
-      {/* Dedicated 3D Viewport - Perfectly Centered, Unobstructed */}
-      <div className="w-full h-[320px] sm:h-[340px] relative flex items-center justify-center bg-radial from-[#F7F6F2] to-transparent">
+      {/* Dedicated 3D Viewport - Perfectly Centered, Responsive */}
+      <div className="w-full h-[270px] xs:h-[300px] sm:h-[340px] relative flex items-center justify-center bg-radial from-[#F7F6F2] to-transparent">
         {hasWebGL ? (
-          <div ref={mountRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
+          <div ref={mountRef} className="w-full h-full cursor-grab active:cursor-grabbing touch-none" />
         ) : (
           <div className="p-8 text-center">
             <div className="w-20 h-20 mx-auto rounded-full border border-[#E6E4DE] flex items-center justify-center mb-3">
@@ -199,13 +199,13 @@ export default function HeroStudioComposition() {
         )}
       </div>
 
-      {/* Bottom Spec Callouts - Sits cleanly below the 3D sphere */}
-      <div className="p-5 border-t border-[#E6E4DE] bg-[#FFFFFF]">
-        <div className="flex items-center justify-between mb-2.5">
-          <div className="flex gap-1.5">
+      {/* Bottom Spec Callouts - Responsive Buttons */}
+      <div className="p-4 sm:p-5 border-t border-[#E6E4DE] bg-[#FFFFFF]">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+          <div className="flex flex-wrap gap-1 sm:gap-1.5">
             <button
               onClick={() => setActiveMetric('architecture')}
-              className={`px-2.5 py-1 rounded text-[11px] font-mono transition-colors cursor-pointer ${
+              className={`px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-mono transition-colors cursor-pointer ${
                 activeMetric === 'architecture'
                   ? 'bg-[#171717] text-white font-medium'
                   : 'text-[#666666] hover:text-[#171717] bg-[#F7F6F2]'
@@ -215,7 +215,7 @@ export default function HeroStudioComposition() {
             </button>
             <button
               onClick={() => setActiveMetric('dsa')}
-              className={`px-2.5 py-1 rounded text-[11px] font-mono transition-colors cursor-pointer ${
+              className={`px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-mono transition-colors cursor-pointer ${
                 activeMetric === 'dsa'
                   ? 'bg-[#171717] text-white font-medium'
                   : 'text-[#666666] hover:text-[#171717] bg-[#F7F6F2]'
@@ -225,7 +225,7 @@ export default function HeroStudioComposition() {
             </button>
             <button
               onClick={() => setActiveMetric('focus')}
-              className={`px-2.5 py-1 rounded text-[11px] font-mono transition-colors cursor-pointer ${
+              className={`px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-mono transition-colors cursor-pointer ${
                 activeMetric === 'focus'
                   ? 'bg-[#171717] text-white font-medium'
                   : 'text-[#666666] hover:text-[#171717] bg-[#F7F6F2]'
@@ -234,7 +234,7 @@ export default function HeroStudioComposition() {
               Applied AI
             </button>
           </div>
-          <span className="text-[10px] font-mono text-[#3458D4] font-medium flex items-center gap-1">
+          <span className="text-[10px] font-mono text-[#3458D4] font-medium flex items-center gap-1 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-[#3458D4] animate-pulse" />
             Synchronized
           </span>
