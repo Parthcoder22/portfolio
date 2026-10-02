@@ -7,9 +7,18 @@ const fixMimeType = () => ({
   name: 'fix-mime-type',
   configureServer(server) {
     server.middlewares.use((req, res, next) => {
-      const url = req.url?.split('?')[0] || ''
-      if (url.endsWith('.js') || url.endsWith('.mjs') || url.endsWith('.jsx') || url.endsWith('.ts') || url.endsWith('.tsx')) {
-        res.setHeader('Content-Type', 'application/javascript; charset=utf-8')
+      const originalSetHeader = res.setHeader.bind(res)
+      res.setHeader = (name, value) => {
+        if (typeof name === 'string' && name.toLowerCase() === 'content-type') {
+          const path = (req.url || '').split('?')[0]
+          if (
+            /\.(js|mjs|jsx|ts|tsx)$/i.test(path) ||
+            (typeof value === 'string' && value.includes('octet-stream'))
+          ) {
+            value = 'text/javascript; charset=utf-8'
+          }
+        }
+        return originalSetHeader(name, value)
       }
       next()
     })
@@ -19,5 +28,9 @@ const fixMimeType = () => ({
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [fixMimeType(), react(), tailwindcss()],
+  server: {
+    host: true,
+    port: 5173,
+  },
 })
 
