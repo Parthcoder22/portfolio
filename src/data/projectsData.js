@@ -212,7 +212,7 @@ export const projectsData = [
       }
     ],
     github: 'https://github.com/Parthcoder22/Gramin_Udyam_Sahayak',
-    demo: 'https://github.com/Parthcoder22/Gramin_Udyam_Sahayak',
+    demo: 'https://gramin-udyam-sahayak.vercel.app/',
     previewType: 'gramin'
   },
   {

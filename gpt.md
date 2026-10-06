@@ -93,6 +93,7 @@ Inspired by Swiss graphic design, high-end digital agencies, editorial publicati
 
 2. **Gramin Udyam Sahayak**
    - **Repository:** `https://github.com/Parthcoder22/Gramin_Udyam_Sahayak`
+   - **Live Demo:** `https://gramin-udyam-sahayak.vercel.app/`
    - **Stack:** React 19, Python, FastAPI, Supabase pgvector (HNSW), Gemini AI, Whisper.
    - **Key Features:** Concessional credit routing (PMEGP, PMFME, NBCFDC), deterministic amortizing EMI calculation, vernacular voice parsing, 45+ DPR RAG indexing.
 
