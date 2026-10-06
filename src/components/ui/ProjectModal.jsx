@@ -34,6 +34,16 @@ export default function ProjectModal({ project, onClose }) {
             <span className="swiss-tag">
               {project.category}
             </span>
+            {project.isLive ? (
+              <span className="text-[10px] sm:text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded bg-[#10b981]/10 text-[#059669] border border-[#10b981]/25 inline-flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse" />
+                Live Deployed
+              </span>
+            ) : (
+              <span className="text-[10px] sm:text-[11px] font-mono font-medium px-2.5 py-0.5 rounded bg-[#777777]/10 text-[#777777] border border-[#E6E4DE] inline-flex items-center gap-1">
+                Open Source / Non-Deployed
+              </span>
+            )}
             {project.badge && (
               <span className="text-[10px] sm:text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded bg-[#3458D4]/10 text-[#3458D4] border border-[#3458D4]/20">
                 {project.badge}

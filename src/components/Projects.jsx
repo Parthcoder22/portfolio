@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { projectsData } from '../data/projectsData'
 import { ArrowUpRight, Scale, ShieldCheck, MapPin, Briefcase, Activity, ExternalLink, Zap } from 'lucide-react'
 import { GithubIcon } from './ui/Icons'
@@ -341,6 +341,14 @@ function MobilityTransitPreview() {
 }
 
 export default function Projects({ onOpenModal }) {
+  const [activeFilter, setActiveFilter] = useState('all')
+
+  const filteredProjects = projectsData.filter((project) => {
+    if (activeFilter === 'live') return project.isLive
+    if (activeFilter === 'codebase') return !project.isLive
+    return true
+  })
+
   const renderPreview = (type) => {
     switch (type) {
       case 'pharma':
@@ -364,7 +372,7 @@ export default function Projects({ onOpenModal }) {
     <section id="projects" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-[#E6E4DE] bg-[#F7F6F2]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 sm:mb-20">
+        <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="flex items-center gap-2 mb-3">
             <span className="text-xs font-mono font-bold tracking-widest text-[#3458D4] uppercase">
               01 / SELECTED WORK
@@ -378,9 +386,44 @@ export default function Projects({ onOpenModal }) {
           </p>
         </div>
 
+        {/* Filter Controls */}
+        <div className="flex flex-wrap items-center gap-2.5 mb-12 pb-4 border-b border-[#E6E4DE]">
+          <button
+            onClick={() => setActiveFilter('all')}
+            className={`px-3.5 py-1.5 rounded-md font-mono text-xs font-semibold transition-all cursor-pointer ${
+              activeFilter === 'all'
+                ? 'bg-[#171717] text-white shadow-xs'
+                : 'bg-[#FFFFFF] text-[#555555] hover:text-[#171717] border border-[#E6E4DE]'
+            }`}
+          >
+            All Projects ({projectsData.length})
+          </button>
+          <button
+            onClick={() => setActiveFilter('live')}
+            className={`px-3.5 py-1.5 rounded-md font-mono text-xs font-semibold transition-all cursor-pointer inline-flex items-center gap-1.5 ${
+              activeFilter === 'live'
+                ? 'bg-[#10b981] text-white shadow-xs'
+                : 'bg-[#FFFFFF] text-[#059669] hover:bg-[#10b981]/10 border border-[#10b981]/30'
+            }`}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+            Live Deployments ({projectsData.filter((p) => p.isLive).length})
+          </button>
+          <button
+            onClick={() => setActiveFilter('codebase')}
+            className={`px-3.5 py-1.5 rounded-md font-mono text-xs font-semibold transition-all cursor-pointer ${
+              activeFilter === 'codebase'
+                ? 'bg-[#171717] text-white shadow-xs'
+                : 'bg-[#FFFFFF] text-[#777777] hover:text-[#171717] border border-[#E6E4DE]'
+            }`}
+          >
+            Open Source / Non-Deployed ({projectsData.filter((p) => !p.isLive).length})
+          </button>
+        </div>
+
         {/* Case Studies List - Alternating Layout */}
         <div className="space-y-12 sm:space-y-16">
-          {projectsData.map((project, index) => {
+          {filteredProjects.map((project, index) => {
             const isReversed = index % 2 !== 0
 
             return (
@@ -396,6 +439,16 @@ export default function Projects({ onOpenModal }) {
                       <span className="swiss-tag">
                         {project.category}
                       </span>
+                      {project.isLive ? (
+                        <span className="text-[10px] sm:text-[11px] font-mono px-2.5 py-0.5 rounded font-semibold bg-[#10b981]/10 text-[#059669] border border-[#10b981]/25 inline-flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse" />
+                          Live Deployed
+                        </span>
+                      ) : (
+                        <span className="text-[10px] sm:text-[11px] font-mono px-2.5 py-0.5 rounded font-medium bg-[#777777]/10 text-[#777777] border border-[#E6E4DE] inline-flex items-center gap-1">
+                          Open Source / Non-Deployed
+                        </span>
+                      )}
                       {project.badge && (
                         <span className="text-[10px] sm:text-[11px] font-mono px-2.5 py-0.5 rounded font-semibold bg-[#3458D4]/10 text-[#3458D4] border border-[#3458D4]/20">
                           {project.badge}

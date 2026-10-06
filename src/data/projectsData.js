@@ -8,6 +8,7 @@ export const projectsData = [
     badge: 'Flagship B2B Platform',
     accentColor: '#0284c7',
     year: '2025',
+    isLive: true,
     summary:
       'A mission-critical B2B institutional pharmaceutical marketplace designed to eradicate opaque, multi-tier middleman networks in medicine procurement across India through direct digital procurement, statutory compliance (CDSCO, WHO-GMP, 21 CFR Part 11), cold-chain IoT telemetry, and automated escrow clearance.',
     problem:
@@ -56,111 +57,6 @@ export const projectsData = [
     previewType: 'pharma'
   },
   {
-    id: 'antigravity-web3',
-    title: 'AntiGravity Web3',
-    subtitle: 'Interactive Web3 & Blockchain Simulation Platform',
-    tagline: 'Escape the Gravity of Web2 — Interactive Blockchain Education & SHA-256 Mining Simulation',
-    category: 'Web3 / Cryptography & Blockchain EdTech',
-    badge: 'Interactive Web3 Engine',
-    accentColor: '#7c3aed',
-    year: '2025',
-    summary:
-      'A futuristic, interactive educational Web3 platform built to demystify core blockchain architectures, cryptographic hashing, and decentralized networks through real-time simulations, live market telemetry, and hands-on SHA-256 Proof-of-Work mining without heavy external libraries.',
-    problem:
-      'Traditional Web3 educational materials are abstract, dense, or locked behind complex wallet configurations and gas fees, making foundational concepts like Proof-of-Work mining, cryptographic immutability, and Layer-2 scaling difficult for newcomers to intuitively experience.',
-    intendedUsers:
-      'Web3 developers, blockchain learners, computer science students, and enthusiasts looking for hands-on, visual intuition for cryptographic hashing and decentralized protocols.',
-    role: 'Frontend Architecture & Cryptographic Engineering (developed reactive UI with Tailwind CSS v4 and Framer Motion, implemented client-side SHA-256 Proof of Work using the native Web Crypto API, and integrated real-time CoinGecko market telemetry).',
-    solution:
-      'Engineered a lightweight, browser-native 4-page educational web platform featuring an interactive SHA-256 block mining simulator demonstrating Proof of Work and chain invalidation cascades, side-by-side architectural comparison decks (Web2 vs Web3, BTC vs ETH, DB vs Blockchain), real-time CoinGecko price tickers, and an Arbitrum Layer-2 scaling explainer.',
-    features: [
-      'Interactive SHA-256 Block Simulator: Nonce iteration mining with target difficulty ("00"), automatic hash pointer chaining, and real-time visual tamper invalidation',
-      'Native Web Crypto API Engine: Zero external blockchain dependencies — lightning-fast client-side cryptographic hashing via browser SubtleCrypto',
-      'Real-Time Crypto Telemetry: Live market prices and 24h change indicators for BTC, ETH, SOL, and ARB powered by CoinGecko API',
-      'Architectural Comparison Decks: 4 interactive glassmorphism comparison modules covering Web2 vs Web3, Bitcoin vs Ethereum, Public vs Private Keys, and Centralized DB vs Blockchain',
-      'Arbitrum L2 Scaling Explainer: 3-step interactive breakdown of Layer-2 rollup mechanisms, gas compression, and settlement',
-      'Futuristic Glassmorphic Theme: Deep space backdrop (#020817), neon cyan/purple accents, floating ambient orbs, and smooth Framer Motion transitions'
-    ],
-    techStack: [
-      'React 19',
-      'Vite',
-      'Tailwind CSS v4',
-      'Web Crypto API',
-      'Framer Motion',
-      'React Router v6',
-      'CoinGecko API',
-      'Lucide React'
-    ],
-    challenges: [
-      {
-        challenge: 'Implementing high-performance client-side block mining without heavy Web3 dependencies',
-        solution:
-          'Leveraged the browser native Web Crypto API (SubtleCrypto.digest) with asynchronous batch nonce increments to mine SHA-256 blocks with difficulty targets without locking the main UI thread.'
-      },
-      {
-        challenge: 'Visualizing cryptographic immutability and cascading invalidation across chained blocks',
-        solution:
-          'Engineered a reactive dependency tree where modifying any transaction data in an earlier block instantaneously recalculates hash discrepancies, marks the tampered block as invalid, and visually fractures downstream hash links.'
-      }
-    ],
-    github: 'https://github.com/Parthcoder22/AntiGravity_Web3_platform',
-    demo: 'https://antigravityweb3platform.netlify.app/',
-    previewType: 'web3'
-  },
-  {
-    id: 'nyayasahayak',
-    title: 'NyayaSahayak',
-    subtitle: 'Legal AI Assistant & Citizen Empowerment Platform',
-    tagline: 'Empowering Citizens with Accessible Legal Intelligence & Procedural Automation',
-    category: 'AI / LegalTech & Citizen Empowerment',
-    badge: 'Featured AI Platform',
-    accentColor: '#3458D4',
-    year: '2024',
-    summary:
-      'An AI-powered legal information and procedural assistance platform designed to democratize access to the Indian legal system through Conversational RAG, FAISS semantic search, RTI drafting workflows, and bilingual scheme navigation.',
-    problem:
-      'The Indian legal system presents severe barriers for citizens: archaic legal jargon, prohibitive consultation fees, lack of clarity around statutory rights (RTI), and fragmented directories for legal aid and social welfare schemes.',
-    intendedUsers:
-      'Everyday Indian citizens, legal aid volunteers, marginalized communities navigating civic welfare, and applicants drafting formal Right to Information (RTI) petitions.',
-    role: 'Full-Stack & AI Contributor (developed conversational RAG interfaces, semantic document retrieval workflows with FAISS, bilingual prompt pipelines, and responsive frontend views).',
-    solution:
-      'Engineered an accessible legal assistant featuring conversational retrieval-augmented generation over constitutional acts and IPC/BNS provisions, an automated RTI drafting wizard, a secure Case Vault, welfare scheme discovery, and a verified legal help directory.',
-    features: [
-      'Conversational RAG: Natural-language legal consultation grounded strictly in Indian statutory frameworks',
-      'Semantic Document Retrieval: High-speed vector search over legal statutes and precedents using FAISS',
-      'Automated RTI Drafting: Guided step-by-step petition generator producing compliant Right to Information forms',
-      'Secure Case Vault: Confidential user document storage with encryption and structured metadata tagging',
-      'Welfare Scheme Discovery: Automated matching of user eligibility to state and central government assistance programs',
-      'Verified Legal Help Directory: Geographically filtered directory of legal aid cells and public advocates'
-    ],
-    techStack: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
-      'FastAPI',
-      'Python',
-      'FAISS',
-      'Supabase',
-      'LangChain'
-    ],
-    challenges: [
-      {
-        challenge: 'Eliminating legal hallucinations in natural language responses',
-        solution:
-          'Enforced strict prompt boundaries and context-grounded retrieval using FAISS vector search, requiring the model to cite exact sections of statutes (e.g., IPC/CrPC/BNS) and attach verified source citations.'
-      },
-      {
-        challenge: 'Automating multi-jurisdictional RTI drafting workflows',
-        solution:
-          'Designed modular questionnaire flows that normalize user inputs into formally formatted, authority-addressed RTI applications ready for print or digital submission.'
-      }
-    ],
-    github: 'https://github.com/Piyush6100/nyayasahayak',
-    demo: 'https://github.com/Piyush6100/nyayasahayak',
-    previewType: 'legal'
-  },
-  {
     id: 'gramin-udyam-sahayak',
     title: 'Gramin Udyam Sahayak',
     subtitle: 'ग्रामीण उद्यम सहायक • AI Credit & Advisory Portal',
@@ -169,6 +65,7 @@ export const projectsData = [
     badge: 'Flagship AI Project',
     accentColor: '#10b981',
     year: '2025',
+    isLive: true,
     summary:
       'An end-to-end digital assistance portal designed to empower rural Indian micro-entrepreneurs by demystifying government-backed concessional credit (PMEGP, PMFME, NBCFDC), computing deterministic amortizing EMI math, and generating hyper-local feasibility reports using RAG over official DPRs.',
     problem:
@@ -216,13 +113,68 @@ export const projectsData = [
     previewType: 'gramin'
   },
   {
+    id: 'antigravity-web3',
+    title: 'AntiGravity Web3',
+    subtitle: 'Interactive Web3 & Blockchain Simulation Platform',
+    tagline: 'Escape the Gravity of Web2 — Interactive Blockchain Education & SHA-256 Mining Simulation',
+    category: 'Web3 / Cryptography & Blockchain EdTech',
+    badge: 'Interactive Web3 Engine',
+    accentColor: '#7c3aed',
+    year: '2025',
+    isLive: true,
+    summary:
+      'A futuristic, interactive educational Web3 platform built to demystify core blockchain architectures, cryptographic hashing, and decentralized networks through real-time simulations, live market telemetry, and hands-on SHA-256 Proof-of-Work mining without heavy external libraries.',
+    problem:
+      'Traditional Web3 educational materials are abstract, dense, or locked behind complex wallet configurations and gas fees, making foundational concepts like Proof-of-Work mining, cryptographic immutability, and Layer-2 scaling difficult for newcomers to intuitively experience.',
+    intendedUsers:
+      'Web3 developers, blockchain learners, computer science students, and enthusiasts looking for hands-on, visual intuition for cryptographic hashing and decentralized protocols.',
+    role: 'Frontend Architecture & Cryptographic Engineering (developed reactive UI with Tailwind CSS v4 and Framer Motion, implemented client-side SHA-256 Proof of Work using the native Web Crypto API, and integrated real-time CoinGecko market telemetry).',
+    solution:
+      'Engineered a lightweight, browser-native 4-page educational web platform featuring an interactive SHA-256 block mining simulator demonstrating Proof of Work and chain invalidation cascades, side-by-side architectural comparison decks (Web2 vs Web3, BTC vs ETH, DB vs Blockchain), real-time CoinGecko price tickers, and an Arbitrum Layer-2 scaling explainer.',
+    features: [
+      'Interactive SHA-256 Block Simulator: Nonce iteration mining with target difficulty ("00"), automatic hash pointer chaining, and real-time visual tamper invalidation',
+      'Native Web Crypto API Engine: Zero external blockchain dependencies — lightning-fast client-side cryptographic hashing via browser SubtleCrypto',
+      'Real-Time Crypto Telemetry: Live market prices and 24h change indicators for BTC, ETH, SOL, and ARB powered by CoinGecko API',
+      'Architectural Comparison Decks: 4 interactive glassmorphism comparison modules covering Web2 vs Web3, Bitcoin vs Ethereum, Public vs Private Keys, and Centralized DB vs Blockchain',
+      'Arbitrum L2 Scaling Explainer: 3-step interactive breakdown of Layer-2 rollup mechanisms, gas compression, and settlement',
+      'Futuristic Glassmorphic Theme: Deep space backdrop (#020817), neon cyan/purple accents, floating ambient orbs, and smooth Framer Motion transitions'
+    ],
+    techStack: [
+      'React 19',
+      'Vite',
+      'Tailwind CSS v4',
+      'Web Crypto API',
+      'Framer Motion',
+      'React Router v6',
+      'CoinGecko API',
+      'Lucide React'
+    ],
+    challenges: [
+      {
+        challenge: 'Implementing high-performance client-side block mining without heavy Web3 dependencies',
+        solution:
+          'Leveraged the browser native Web Crypto API (SubtleCrypto.digest) with asynchronous batch nonce increments to mine SHA-256 blocks with difficulty targets without locking the main UI thread.'
+      },
+      {
+        challenge: 'Visualizing cryptographic immutability and cascading invalidation across chained blocks',
+        solution:
+          'Engineered a reactive dependency tree where modifying any transaction data in an earlier block instantaneously recalculates hash discrepancies, marks the tampered block as invalid, and visually fractures downstream hash links.'
+      }
+    ],
+    github: 'https://github.com/Parthcoder22/AntiGravity_Web3_platform',
+    demo: 'https://antigravityweb3platform.netlify.app/',
+    previewType: 'web3'
+  },
+  {
     id: 'careerflow',
     title: 'CareerFlow',
     subtitle: 'AI-Powered Placement Management System',
     tagline: 'Streamlining Campus Placement Lifecycles with AI Automation',
     category: 'Full-Stack / EdTech SaaS',
+    badge: 'Live SaaS Platform',
     accentColor: '#8b5cf6',
     year: '2025',
+    isLive: true,
     summary:
       'A comprehensive campus placement management platform uniting students, training & placement officers (TPOs), and corporate recruiters into a structured operational portal.',
     problem:
@@ -271,8 +223,10 @@ export const projectsData = [
     subtitle: 'Urban Mobility Platform',
     tagline: 'Real-Time Dispatch & Intelligent Transit Ecosystem',
     category: 'Full-Stack / Geospatial Mobility',
+    badge: 'Geospatial Mobility',
     accentColor: '#38bdf8',
     year: '2024',
+    isLive: true,
     summary:
       'A scalable ride-hailing and fleet management platform concept engineered for synchronized passenger, driver, and administrative workflows with geospatial routing.',
     problem:
@@ -312,5 +266,59 @@ export const projectsData = [
     github: 'https://github.com/Parthcoder22/CABGO',
     demo: 'https://cabgo-mobility.vercel.app',
     previewType: 'mobility'
+  },
+  {
+    id: 'nyayasahayak',
+    title: 'NyayaSahayak',
+    subtitle: 'Legal AI Assistant & Citizen Empowerment Platform',
+    tagline: 'Empowering Citizens with Accessible Legal Intelligence & Procedural Automation',
+    category: 'AI / LegalTech & Citizen Empowerment',
+    badge: 'Open-Source Architecture',
+    accentColor: '#3458D4',
+    year: '2024',
+    isLive: false,
+    summary:
+      'An AI-powered legal information and procedural assistance platform designed to democratize access to the Indian legal system through Conversational RAG, FAISS semantic search, RTI drafting workflows, and bilingual scheme navigation.',
+    problem:
+      'The Indian legal system presents severe barriers for citizens: archaic legal jargon, prohibitive consultation fees, lack of clarity around statutory rights (RTI), and fragmented directories for legal aid and social welfare schemes.',
+    intendedUsers:
+      'Everyday Indian citizens, legal aid volunteers, marginalized communities navigating civic welfare, and applicants drafting formal Right to Information (RTI) petitions.',
+    role: 'Full-Stack & AI Contributor (developed conversational RAG interfaces, semantic document retrieval workflows with FAISS, bilingual prompt pipelines, and responsive frontend views).',
+    solution:
+      'Engineered an accessible legal assistant featuring conversational retrieval-augmented generation over constitutional acts and IPC/BNS provisions, an automated RTI drafting wizard, a secure Case Vault, welfare scheme discovery, and a verified legal help directory.',
+    features: [
+      'Conversational RAG: Natural-language legal consultation grounded strictly in Indian statutory frameworks',
+      'Semantic Document Retrieval: High-speed vector search over legal statutes and precedents using FAISS',
+      'Automated RTI Drafting: Guided step-by-step petition generator producing compliant Right to Information forms',
+      'Secure Case Vault: Confidential user document storage with encryption and structured metadata tagging',
+      'Welfare Scheme Discovery: Automated matching of user eligibility to state and central government assistance programs',
+      'Verified Legal Help Directory: Geographically filtered directory of legal aid cells and public advocates'
+    ],
+    techStack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'FastAPI',
+      'Python',
+      'FAISS',
+      'Supabase',
+      'LangChain'
+    ],
+    challenges: [
+      {
+        challenge: 'Eliminating legal hallucinations in natural language responses',
+        solution:
+          'Enforced strict prompt boundaries and context-grounded retrieval using FAISS vector search, requiring the model to cite exact sections of statutes (e.g., IPC/CrPC/BNS) and attach verified source citations.'
+      },
+      {
+        challenge: 'Automating multi-jurisdictional RTI drafting workflows',
+        solution:
+          'Designed modular questionnaire flows that normalize user inputs into formally formatted, authority-addressed RTI applications ready for print or digital submission.'
+      }
+    ],
+    github: 'https://github.com/Piyush6100/nyayasahayak',
+    demo: null,
+    previewType: 'legal'
   }
 ]
