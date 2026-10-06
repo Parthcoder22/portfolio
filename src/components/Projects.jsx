@@ -1,9 +1,130 @@
 import React from 'react'
 import { projectsData } from '../data/projectsData'
-import { ArrowUpRight, Scale, ShieldCheck, MapPin, Briefcase } from 'lucide-react'
+import { ArrowUpRight, Scale, ShieldCheck, MapPin, Briefcase, Activity, ExternalLink, Zap } from 'lucide-react'
 import { GithubIcon } from './ui/Icons'
 
 // Polished, realistic UI Product Previews designed with Swiss Editorial Precision
+
+function PharmaConnectPreview() {
+  return (
+    <div className="w-full h-full rounded-xl bg-[#FFFFFF] border border-[#E6E4DE] p-5 sm:p-6 flex flex-col justify-between font-sans text-xs select-none shadow-xs">
+      {/* Top Header */}
+      <div className="flex items-center justify-between border-b border-[#E6E4DE] pb-3">
+        <div className="flex items-center gap-2 text-[#0284c7]">
+          <Activity className="w-4 h-4 text-[#0284c7]" />
+          <span className="font-semibold text-[#171717] text-xs font-display">
+            PharmaConnect &bull; B2B Exchange
+          </span>
+        </div>
+        <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#0284c7]/10 text-[#0284c7] border border-[#0284c7]/25 font-medium flex items-center gap-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse" />
+          CDSCO &bull; WHO-GMP
+        </span>
+      </div>
+
+      {/* Institutional Exchange & Cold Chain Order Card */}
+      <div className="my-3 space-y-2.5">
+        <div className="p-3 rounded-lg bg-[#F7F6F2] border border-[#E6E4DE]">
+          <div className="flex items-center justify-between text-[10px] font-mono text-[#777777] mb-1">
+            <span>PROCUREMENT PO #2025-884</span>
+            <span className="text-[#0284c7] font-medium">Apollo Medics &rarr; Sun Pharma</span>
+          </div>
+          <p className="text-[#171717] text-xs font-semibold">
+            Meropenem Trihydrate 1g IV &bull; Schedule H1
+          </p>
+          <div className="mt-1.5 flex flex-wrap gap-1.5 text-[10px] font-mono">
+            <span className="px-1.5 py-0.5 rounded bg-[#10b981]/10 text-[#059669] font-medium">&check; Batch #MP-8402</span>
+            <span className="px-1.5 py-0.5 rounded bg-[#0284c7]/10 text-[#0284c7] font-medium">&check; Digital CoA Signed</span>
+            <span className="px-1.5 py-0.5 rounded bg-[#F7F6F2] border border-[#E6E4DE] text-[#666666]">Exp: 11/2027</span>
+          </div>
+        </div>
+
+        <div className="p-3 rounded-lg bg-[#FFFFFF] border border-[#0284c7]/30 shadow-xs">
+          <div className="flex items-center justify-between mb-1.5 text-[11px]">
+            <span className="font-semibold text-[#171717] font-tech flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0284c7]" />
+              Cold Chain IoT Probe: 4.2&deg;C
+            </span>
+            <span className="text-[10px] font-mono text-[#059669] bg-[#10b981]/10 px-1.5 py-0.5 rounded font-medium">
+              2&deg;C–8&deg;C Safe
+            </span>
+          </div>
+          <p className="text-xs text-[#555555] leading-relaxed">
+            Escrow ₹2,45,000 locked via Razorpay &bull; E-Way Bill #EB-90412 with active tamper seal.
+          </p>
+          <div className="mt-2 pt-2 border-t border-[#E6E4DE] flex flex-wrap justify-between text-[10px] font-mono text-[#666666]">
+            <span>GST Form INV-01 Ready</span>
+            <span className="text-[#0284c7] font-medium">Bedside Dispense Validated</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Telemetry Bar */}
+      <div className="pt-2.5 border-t border-[#E6E4DE] flex items-center justify-between text-[11px] text-[#777777] font-mono">
+        <span>21 CFR Part 11 Audit Trail</span>
+        <span className="text-[#0284c7] font-medium">Escrow Release on Digital CoA</span>
+      </div>
+    </div>
+  )
+}
+
+function AntiGravityWeb3Preview() {
+  return (
+    <div className="w-full h-full rounded-xl bg-[#FFFFFF] border border-[#E6E4DE] p-5 sm:p-6 flex flex-col justify-between font-sans text-xs select-none shadow-xs">
+      {/* Top Header */}
+      <div className="flex items-center justify-between border-b border-[#E6E4DE] pb-3">
+        <div className="flex items-center gap-2 text-[#7c3aed]">
+          <Zap className="w-4 h-4 text-[#7c3aed]" />
+          <span className="font-semibold text-[#171717] text-xs font-display">
+            AntiGravity Web3 &bull; Block Simulator
+          </span>
+        </div>
+        <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#7c3aed]/10 text-[#7c3aed] border border-[#7c3aed]/25 font-medium flex items-center gap-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#00f5ff] animate-pulse" />
+          Web Crypto SHA-256
+        </span>
+      </div>
+
+      {/* Block Mining & Chaining Simulation Box */}
+      <div className="my-3 space-y-2.5">
+        <div className="p-3 rounded-lg bg-[#020817] text-white border border-[#1e293b]">
+          <div className="flex items-center justify-between text-[10px] font-mono text-[#94a3b8] mb-1">
+            <span className="text-[#00f5ff] font-semibold">&bull; BLOCK #1 (GENESIS)</span>
+            <span className="px-1.5 py-0.5 rounded bg-[#10b981]/20 text-[#34d399] text-[9px] font-mono">&check; MINED (00)</span>
+          </div>
+          <div className="text-[11px] font-mono text-[#e2e8f0] truncate">
+            Data: <span className="text-[#00f5ff]">&ldquo;Alice pays Bob 1.5 ETH&rdquo;</span>
+          </div>
+          <div className="mt-1.5 flex items-center justify-between text-[9px] font-mono text-[#94a3b8] pt-1.5 border-t border-[#1e293b]">
+            <span>Nonce: <strong className="text-white">48,219</strong></span>
+            <span className="text-[#38bdf8] truncate max-w-[170px]">Hash: 00c4f8...b89e</span>
+          </div>
+        </div>
+
+        <div className="p-3 rounded-lg bg-[#F7F6F2] border border-[#E6E4DE]">
+          <div className="flex items-center justify-between text-[10px] font-mono text-[#777777] mb-1">
+            <span className="text-[#7c3aed] font-semibold">&bull; BLOCK #2 (CHAINED)</span>
+            <span className="text-[#10b981] font-medium text-[9px]">&check; VALID POINTER</span>
+          </div>
+          <div className="text-[11px] font-mono text-[#171717] truncate">
+            Prev Hash: <span className="text-[#7c3aed]">00c4f8...b89e</span>
+          </div>
+          <div className="mt-1.5 flex items-center justify-between text-[9px] font-mono text-[#666666] pt-1.5 border-t border-[#E6E4DE]">
+            <span>Arbitrum L2 Rollup</span>
+            <span className="text-[#10b981] font-semibold">PoW Verified</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Live Market Ticker Strip */}
+      <div className="pt-2.5 border-t border-[#E6E4DE] flex items-center justify-between text-[10px] sm:text-[11px] text-[#777777] font-mono">
+        <span className="truncate">CoinGecko: BTC $98.4K &bull; ETH $2,840</span>
+        <span className="text-[#7c3aed] font-medium shrink-0 ml-2">Immutability Intact</span>
+      </div>
+    </div>
+  )
+}
+
 
 function NyayaSahayakPreview() {
   return (
@@ -222,6 +343,10 @@ function MobilityTransitPreview() {
 export default function Projects({ onOpenModal }) {
   const renderPreview = (type) => {
     switch (type) {
+      case 'pharma':
+        return <PharmaConnectPreview />
+      case 'web3':
+        return <AntiGravityWeb3Preview />
       case 'legal':
         return <NyayaSahayakPreview />
       case 'gramin':
@@ -325,6 +450,18 @@ export default function Projects({ onOpenModal }) {
                         <span>Explore Case Study</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </button>
+
+                      {project.demo && project.demo !== project.github && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full sm:w-auto px-4 py-3 rounded-md font-mono text-xs font-semibold text-[#3458D4] bg-[#3458D4]/10 hover:bg-[#3458D4]/15 border border-[#3458D4]/25 transition-all inline-flex items-center justify-center gap-1.5 text-center"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          <span>Live Demo</span>
+                        </a>
+                      )}
 
                       {project.github && (
                         <a

@@ -1,5 +1,113 @@
 export const projectsData = [
   {
+    id: 'pharmaconnect',
+    title: 'PharmaConnect',
+    subtitle: 'B2B Institutional Pharmaceutical Marketplace',
+    tagline: 'Compliant Procurement Platform Connecting Certified Pharma Manufacturers Directly with Hospitals',
+    category: 'Full-Stack / B2B HealthTech & Supply Chain',
+    badge: 'Flagship B2B Platform',
+    accentColor: '#0284c7',
+    year: '2025',
+    summary:
+      'A mission-critical B2B institutional pharmaceutical marketplace designed to eradicate opaque, multi-tier middleman networks in medicine procurement across India through direct digital procurement, statutory compliance (CDSCO, WHO-GMP, 21 CFR Part 11), cold-chain IoT telemetry, and automated escrow clearance.',
+    problem:
+      'Opaque multi-tier middleman networks in medicine procurement create high counterfeit risks, transit cold chain thermal excursions, lack of statutory drug licensing validation, non-compliant tax invoicing, and severe working capital bottlenecks between hospitals and pharmaceutical manufacturers.',
+    intendedUsers:
+      'NABH-accredited hospital networks, institutional healthcare buying groups, wholesale pharmacies, CDSCO-certified pharmaceutical manufacturers, and C&F logistics agents.',
+    role: 'Full-Stack Architecture & Engineering (designed 16-table PostgreSQL schema, multi-role RBAC, statutory compliance engines, IoT cold chain telemetry monitoring, Razorpay escrow integration, and real-time Socket.IO communication).',
+    solution:
+      'Engineered an end-to-end B2B procurement exchange featuring CDSCO license validation, GS1-128 barcode lookup, automated Form INV-01 tax invoicing, IoT thermal excursion quarantine (2°C–8°C), an 8-stage order lifecycle pipeline, and milestone-based escrow release upon Certificate of Analysis (CoA) verification.',
+    features: [
+      'Institutional Exchange & Verification: Real-time CDSCO clearing status, daily trade turnover metrics, and active thermal fleet tracking',
+      'Buyer Procurement Desk: Tiered volume wholesale pricing, instant Certificate of Analysis (CoA) inspection, and bedside patient dispense slips',
+      'Supplier Enterprise Command Center: Cleanroom HVAC & particle monitoring, rapid SKU regulatory classification (Schedule H/H1/X), and order fulfillment pipeline',
+      'Cold Chain IoT Telemetry & Quarantine: Continuous thermal logging (2°C–8°C) with automated Form 483 quarantine protocols for excursion-damaged stock',
+      'Statutory Tax Invoicing & E-Way Bills: Section 31 CGST Act compliant Form INV-01 tax invoices with dynamic QR codes and NIC E-Way bill generation',
+      'Razorpay Escrow Integration: Milestone-based escrow payments with HMAC SHA-256 webhook verification and fund release upon digital CoA sign-off',
+      'Real-Time WebSocket Communication: PO-bound buyer-supplier secure chat with compliance document attachments and 21 CFR Part 11 immutable audit trail'
+    ],
+    techStack: [
+      'React 19',
+      'Vite 8',
+      'Tailwind CSS v4',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'Supabase',
+      'Socket.io',
+      'Razorpay Escrow',
+      'Recharts',
+      'Zod'
+    ],
+    challenges: [
+      {
+        challenge: 'Automating statutory regulatory compliance and cold-chain integrity',
+        solution:
+          'Engineered automated CDSCO/FDA license validation, GS1-128 barcode scanning, and continuous IoT thermal tracking (2°C–8°C) with automated Form 483 excursion quarantine to prevent damaged medicine batches from reaching hospital wards.'
+      },
+      {
+        challenge: 'Secure milestone escrow and multi-entity B2B invoicing',
+        solution:
+          'Implemented Razorpay escrow contracts with HMAC SHA-256 webhook verification releasing funds only upon digital Certificate of Analysis (CoA) sign-off, coupled with Section 31 CGST Act Form INV-01 split CGST/SGST/IGST tax invoice generation.'
+      }
+    ],
+    github: 'https://github.com/Parthcoder22/pharmaconnect',
+    demo: 'https://pharmaconneect.netlify.app/',
+    previewType: 'pharma'
+  },
+  {
+    id: 'antigravity-web3',
+    title: 'AntiGravity Web3',
+    subtitle: 'Interactive Web3 & Blockchain Simulation Platform',
+    tagline: 'Escape the Gravity of Web2 — Interactive Blockchain Education & SHA-256 Mining Simulation',
+    category: 'Web3 / Cryptography & Blockchain EdTech',
+    badge: 'Interactive Web3 Engine',
+    accentColor: '#7c3aed',
+    year: '2025',
+    summary:
+      'A futuristic, interactive educational Web3 platform built to demystify core blockchain architectures, cryptographic hashing, and decentralized networks through real-time simulations, live market telemetry, and hands-on SHA-256 Proof-of-Work mining without heavy external libraries.',
+    problem:
+      'Traditional Web3 educational materials are abstract, dense, or locked behind complex wallet configurations and gas fees, making foundational concepts like Proof-of-Work mining, cryptographic immutability, and Layer-2 scaling difficult for newcomers to intuitively experience.',
+    intendedUsers:
+      'Web3 developers, blockchain learners, computer science students, and enthusiasts looking for hands-on, visual intuition for cryptographic hashing and decentralized protocols.',
+    role: 'Frontend Architecture & Cryptographic Engineering (developed reactive UI with Tailwind CSS v4 and Framer Motion, implemented client-side SHA-256 Proof of Work using the native Web Crypto API, and integrated real-time CoinGecko market telemetry).',
+    solution:
+      'Engineered a lightweight, browser-native 4-page educational web platform featuring an interactive SHA-256 block mining simulator demonstrating Proof of Work and chain invalidation cascades, side-by-side architectural comparison decks (Web2 vs Web3, BTC vs ETH, DB vs Blockchain), real-time CoinGecko price tickers, and an Arbitrum Layer-2 scaling explainer.',
+    features: [
+      'Interactive SHA-256 Block Simulator: Nonce iteration mining with target difficulty ("00"), automatic hash pointer chaining, and real-time visual tamper invalidation',
+      'Native Web Crypto API Engine: Zero external blockchain dependencies — lightning-fast client-side cryptographic hashing via browser SubtleCrypto',
+      'Real-Time Crypto Telemetry: Live market prices and 24h change indicators for BTC, ETH, SOL, and ARB powered by CoinGecko API',
+      'Architectural Comparison Decks: 4 interactive glassmorphism comparison modules covering Web2 vs Web3, Bitcoin vs Ethereum, Public vs Private Keys, and Centralized DB vs Blockchain',
+      'Arbitrum L2 Scaling Explainer: 3-step interactive breakdown of Layer-2 rollup mechanisms, gas compression, and settlement',
+      'Futuristic Glassmorphic Theme: Deep space backdrop (#020817), neon cyan/purple accents, floating ambient orbs, and smooth Framer Motion transitions'
+    ],
+    techStack: [
+      'React 19',
+      'Vite',
+      'Tailwind CSS v4',
+      'Web Crypto API',
+      'Framer Motion',
+      'React Router v6',
+      'CoinGecko API',
+      'Lucide React'
+    ],
+    challenges: [
+      {
+        challenge: 'Implementing high-performance client-side block mining without heavy Web3 dependencies',
+        solution:
+          'Leveraged the browser native Web Crypto API (SubtleCrypto.digest) with asynchronous batch nonce increments to mine SHA-256 blocks with difficulty targets without locking the main UI thread.'
+      },
+      {
+        challenge: 'Visualizing cryptographic immutability and cascading invalidation across chained blocks',
+        solution:
+          'Engineered a reactive dependency tree where modifying any transaction data in an earlier block instantaneously recalculates hash discrepancies, marks the tampered block as invalid, and visually fractures downstream hash links.'
+      }
+    ],
+    github: 'https://github.com/Parthcoder22/AntiGravity_Web3_platform',
+    demo: 'https://antigravityweb3platform.netlify.app/',
+    previewType: 'web3'
+  },
+  {
     id: 'nyayasahayak',
     title: 'NyayaSahayak',
     subtitle: 'Legal AI Assistant & Citizen Empowerment Platform',
@@ -154,7 +262,7 @@ export const projectsData = [
       }
     ],
     github: 'https://github.com/Parthcoder22/CareerFlow',
-    demo: 'https://careerflow-portal.vercel.app',
+    demo: 'https://career-flow-teal.vercel.app/',
     previewType: 'placement'
   },
   {

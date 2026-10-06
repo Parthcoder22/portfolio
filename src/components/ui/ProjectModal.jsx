@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { X, CheckCircle2, Layers, AlertCircle, Users } from 'lucide-react'
+import { X, CheckCircle2, Layers, AlertCircle, Users, ExternalLink } from 'lucide-react'
 import { GithubIcon } from './Icons'
 
 export default function ProjectModal({ project, onClose }) {
@@ -163,7 +163,18 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            {project.demo && project.demo !== project.github && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-md font-mono text-xs font-semibold text-white bg-[#3458D4] hover:bg-[#2648BD] transition-colors inline-flex items-center gap-1.5 shadow-xs"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Live Demo</span>
+              </a>
+            )}
             {project.github && (
               <a
                 href={project.github}
